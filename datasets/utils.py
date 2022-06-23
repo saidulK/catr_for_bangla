@@ -8,7 +8,7 @@ import os
 MAX_DIM = 299
 
 def read_json(file_name):
-    with open(file_name) as handle:
+    with open(file_name,encoding='utf-8') as handle:
         out = json.load(handle)
     return out
 

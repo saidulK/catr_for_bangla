@@ -82,7 +82,6 @@ def main(config):
         validation_loss = evaluate(model, criterion, data_loader_val, device)
         print(f"Validation Loss: {validation_loss}")
 
-        print()
 
 
 if __name__ == "__main__":

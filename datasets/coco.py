@@ -8,11 +8,12 @@ import random
 import os
 
 from transformers import BertTokenizer
+from transformers import AutoModelForPreTraining, AutoTokenizer
+from normalizer import normalize
 
 from .utils import nested_tensor_from_tensor_list, read_json
 
 MAX_DIM = 299
-
 
 def under_max(image):
     if image.mode != 'RGB':
@@ -60,15 +61,14 @@ class CocoCaption(Dataset):
 
         self.root = root
         self.transform = transform
-        self.annot = [(self._process(val['image_id']), val['caption'])
-                      for val in ann['annotations']]
+        self.annot = [(val['filename'], val['caption'][0])
+                      for val in ann]
         if mode == 'validation':
             self.annot = self.annot
         if mode == 'training':
             self.annot = self.annot[: limit]
 
-        self.tokenizer = BertTokenizer.from_pretrained(
-            'bert-base-uncased', do_lower=True)
+        self.tokenizer  = AutoTokenizer.from_pretrained("csebuetnlp/banglabert")
         self.max_length = max_length + 1
 
     def _process(self, image_id):
@@ -88,7 +88,7 @@ class CocoCaption(Dataset):
 
         caption_encoded = self.tokenizer.encode_plus(
             caption, max_length=self.max_length, pad_to_max_length=True, return_attention_mask=True, return_token_type_ids=False, truncation=True)
-
+        
         caption = np.array(caption_encoded['input_ids'])
         cap_mask = (
             1 - np.array(caption_encoded['attention_mask'])).astype(bool)
@@ -98,20 +98,21 @@ class CocoCaption(Dataset):
 
 def build_dataset(config, mode='training'):
     if mode == 'training':
-        train_dir = os.path.join(config.dir, 'train2017')
+        train_dir = os.path.join(config.dir, 'training')
         train_file = os.path.join(
-            config.dir, 'annotations', 'captions_train2017.json')
+            config.dir, 'annotations', 'train_annotations.json')
         data = CocoCaption(train_dir, read_json(
             train_file), max_length=config.max_position_embeddings, limit=config.limit, transform=train_transform, mode='training')
         return data
 
     elif mode == 'validation':
-        val_dir = os.path.join(config.dir, 'val2017')
+        val_dir = os.path.join(config.dir, 'validation')
         val_file = os.path.join(
-            config.dir, 'annotations', 'captions_val2017.json')
+            config.dir, 'annotations', 'val_annotations.json')
         data = CocoCaption(val_dir, read_json(
             val_file), max_length=config.max_position_embeddings, limit=config.limit, transform=val_transform, mode='validation')
         return data
 
     else:
         raise NotImplementedError(f"{mode} not supported")
+
