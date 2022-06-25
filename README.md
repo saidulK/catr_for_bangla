@@ -7,18 +7,35 @@ PyTorch training code and pretrained models for **CATR** (**CA**ption **TR**ansf
 
 <p align="center">
   <img src=".github/1.png" />
+</p>
   কযেকজন মানষ আছে ।
+<p align="center">
   <img src=".github/2.png" />
+</p>
   একজন পরষ একটি রিকসা চালিযে যাচছে ।
+<p align="center">
   <img src=".github/3.png" />
   একটি মেযে শিশ তাকিযে আছে ।
-  <img src=".github/4.png" />
-  একজন নারী মোবাইল এ কথা বলছে ।
-  <img src=".github/5.PNG" />
-  কযেকজন মানষ আছে ।
 </p>
+<p align="center">
+  <img src=".github/4.png" />
+</p>
+  একজন নারী মোবাইল এ কথা বলছে ।
+<p align="center">
+  <img src=".github/5.PNG" />
+</p>
+  কযেকজন মানষ আছে ।
 
+# Google colab:
 
+link for the colab file:
+```
+https://colab.research.google.com/drive/12qcRsNk8SiI5PVQN6FOHXP9Oe24t-yeO#scrollTo=7kRaXYBDQCd2
+```
+link for the files in google drive:
+```
+https://drive.google.com/drive/folders/19M5LcM6i-hBE1462as0-OoIJgALnRUQ3?usp=sharing
+```
 # Usage 
 
 First, clone the repository locally:
