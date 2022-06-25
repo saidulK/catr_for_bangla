@@ -30,12 +30,11 @@ PyTorch training code and pretrained models for **CATR** (**CA**ption **TR**ansf
 
 
 
-
 # Google colab:
 
 link for the colab file:
 ```
-https://colab.research.google.com/drive/12qcRsNk8SiI5PVQN6FOHXP9Oe24t-yeO#scrollTo=7kRaXYBDQCd2
+https://colab.research.google.com/drive/12qcRsNk8SiI5PVQN6FOHXP9Oe24t-yeO?usp=sharing
 ```
 link for the files in google drive:
 ```
@@ -88,7 +87,7 @@ The transformer is trained with dropout of 0.1, and the whole model is trained w
 
 ## Testing
 
-To test the model with your own images check Prediction.ipynb. Change the image path and run the code.
+To test the model with your own images check ```Prediction.ipynb```. Change the image path and run the code.
 
 # License
 CATR is released under the Apache 2.0 license. Please see the [LICENSE](LICENSE) file for more information.
