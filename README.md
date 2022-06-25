@@ -18,13 +18,13 @@ PyTorch training code and pretrained models for **CATR** (**CA**ption **TR**ansf
 
 
 <p align="center">
-  <img src=".github/5.PNG" />
+  <img src=".github/4.PNG" />
 </p>
 একটি মেযে শিশ তাকিযে আছে ।
 
 
 <p align="center">
-  <img src=".github/4.png" />
+  <img src=".github/5.png" />
 </p>
  একজন নারী মোবাইল এ কথা বলছে ।
 
@@ -62,7 +62,7 @@ catr/ repository
 Bangla Dataset/ dataset
 ```
 
-Run Dataset Preprocessing.ipynb to generate the training, validations and annotations folder
+Run ```Dataset Preprocessing.ipynb ``` to generate the training, validations and annotations folder
 
 
 ```
