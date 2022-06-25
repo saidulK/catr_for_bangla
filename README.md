@@ -16,7 +16,7 @@ PyTorch training code and pretrained models for **CATR** (**CA**ption **TR**ansf
   একজন পরষ একটি রিকসা চালিযে যাচছে ।
 
 <p align="center">
-  <img src=".github/5.png" />
+  <img src=".github/5.PNG" />
 </p>
 একটি মেযে শিশ তাকিযে আছে ।
 
@@ -24,7 +24,7 @@ PyTorch training code and pretrained models for **CATR** (**CA**ption **TR**ansf
   <img src=".github/4.png" />
 </p>
   একজন নারী মোবাইল এ কথা বলছে ।
-  
+
 <p align="center">
   <img src=".github/3.PNG" />
 </p>
