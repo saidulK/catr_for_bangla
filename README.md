@@ -9,19 +9,22 @@ PyTorch training code and pretrained models for **CATR** (**CA**ption **TR**ansf
   <img src=".github/1.png" />
 </p>
   কযেকজন মানষ আছে ।
+
 <p align="center">
   <img src=".github/2.png" />
 </p>
   একজন পরষ একটি রিকসা চালিযে যাচছে ।
+
 <p align="center">
   <img src=".github/5.png" />
-  
 </p>
 একটি মেযে শিশ তাকিযে আছে ।
+
 <p align="center">
   <img src=".github/4.png" />
 </p>
   একজন নারী মোবাইল এ কথা বলছে ।
+  
 <p align="center">
   <img src=".github/3.PNG" />
 </p>
