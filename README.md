@@ -1,36 +1,29 @@
-**CA⫶TR**: Image Captioning with Transformers
+Image Captioning with Transformers for Bangla Dataset
 ========
 PyTorch training code and pretrained models for **CATR** (**CA**ption **TR**ansformer).
 
-The models are also available via torch hub,
-to load model with pretrained weights simply do:
-```python
-model = torch.hub.load('saahiluppal/catr', 'v3', pretrained=True)  # you can choose between v1, v2 and v3
-```
+
 ### Samples:
 
 <p align="center">
-  <img src=".github/cake.png" />
-  <img src=".github/girl.png" />
-  <img src=".github/office.png" />
-  <img src=".github/horse.png" />
-  <img src=".github/airplane.png" />
+  <img src=".github/1.png" />
+  কযেকজন মানষ আছে ।
+  <img src=".github/2.png" />
+  একজন পরষ একটি রিকসা চালিযে যাচছে ।
+  <img src=".github/3.png" />
+  একটি মেযে শিশ তাকিযে আছে ।
+  <img src=".github/4.png" />
+  একজন নারী মোবাইল এ কথা বলছে ।
+  <img src=".github/5.PNG" />
+  কযেকজন মানষ আছে ।
 </p>
 
-All these images has been annotated by CATR.
-
-Test with your own bunch of images:
-````bash
-$ python predict.py --path /path/to/image --v v2  // You can choose between v1, v2, v3 [default is v3]
-````
-Or Try it out in colab [notebook](catr_demo.ipynb)
 
 # Usage 
-There are no extra compiled components in CATR and package dependencies are minimal,
-so the code is very simple to use. We provide instructions how to install dependencies.
+
 First, clone the repository locally:
 ```
-$ git clone https://github.com/saahiluppal/catr.git
+$ git clone https://github.com/saidulK/catr_for_bangla
 ```
 Then, install PyTorch 1.5+ and torchvision 0.6+ along with remaining dependencies:
 ```
@@ -40,14 +33,23 @@ That's it, should be good to train and test caption models.
 
 ## Data preparation
 
-Download and extract COCO 2017 train and val images with annotations from
-[http://cocodataset.org](http://cocodataset.org/#download).
-We expect the directory structure to be the following:
+Download and extract BanglaLekhaImageCaptions images with annotations from: ```https://data.mendeley.com/datasets/rxxch9vw59/2)```.
+The directory is expected to be like:
 ```
-path/to/coco/
-  annotations/  # annotation json files
-  train2017/    # train images
-  val2017/      # val images
+catr/ repository
+Bangla Dataset/ dataset
+```
+
+Run Dataset Preprocessing.ipynb to generate the training, validations and annotations folder
+
+
+```
+path/to/Bangla Dataset/
+  images/  # images of dataset
+  captions # captions json file
+  training/ #training images
+  validation/ #validation images
+  annotations/ #annotations for the images
 ```
 
 ## Training
@@ -63,10 +65,8 @@ Images are rescaled to have max size 299.
 The transformer is trained with dropout of 0.1, and the whole model is trained with grad clip of 0.1.
 
 ## Testing
-To test CATR with your own images.
-```
-$ python predict.py --path /path/to/image --v v2  // You can choose between v1, v2, v3 [default is v3]
-```
+
+To test the model with your own images check Prediction.ipynb. Change the image path and run the code.
 
 # License
 CATR is released under the Apache 2.0 license. Please see the [LICENSE](LICENSE) file for more information.

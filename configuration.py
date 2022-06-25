@@ -17,11 +17,11 @@ class Config(object):
         self.dilation = True
         
         # Basic
-        self.device = 'cpu'
+        self.device = 'cuda'
         self.seed = 42
         self.batch_size = 32
         self.num_workers = 1
-        self.checkpoint = './checkpoint.pth'
+        self.checkpoint = '../checkpoint.pth'
         self.clip_max_norm = 0.1
 
         # Transformer
@@ -39,5 +39,5 @@ class Config(object):
         self.pre_norm = True
 
         # Dataset
-        self.dir = '../'
+        self.dir = '../Bangla Dataset'
         self.limit = -1

@@ -282,6 +282,7 @@ class DecoderEmbeddings(nn.Module):
         self.dropout = nn.Dropout(config.dropout)
 
     def forward(self, x):
+
         input_shape = x.size()
         seq_length = input_shape[1]
         device = x.device

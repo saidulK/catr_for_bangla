@@ -61,14 +61,15 @@ class CocoCaption(Dataset):
 
         self.root = root
         self.transform = transform
-        self.annot = [(val['filename'], val['caption'][0])
+        self.annot = [(val['filename'], val['caption'][1])
                       for val in ann]
         if mode == 'validation':
             self.annot = self.annot
         if mode == 'training':
             self.annot = self.annot[: limit]
 
-        self.tokenizer  = AutoTokenizer.from_pretrained("csebuetnlp/banglabert")
+        self.tokenizer  = BertTokenizer.from_pretrained(
+            'bert-base-uncased', do_lower=True)#AutoTokenizer.from_pretrained("csebuetnlp/banglabert")
         self.max_length = max_length + 1
 
     def _process(self, image_id):
@@ -81,13 +82,14 @@ class CocoCaption(Dataset):
     def __getitem__(self, idx):
         image_id, caption = self.annot[idx]
         image = Image.open(os.path.join(self.root, image_id))
-
+        #caption = normalize(caption)
+        
         if self.transform:
             image = self.transform(image)
         image = nested_tensor_from_tensor_list(image.unsqueeze(0))
 
         caption_encoded = self.tokenizer.encode_plus(
-            caption, max_length=self.max_length, pad_to_max_length=True, return_attention_mask=True, return_token_type_ids=False, truncation=True)
+            caption, max_length=self.max_length, padding='max_length', return_attention_mask=True, return_token_type_ids=False, truncation=True)
         
         caption = np.array(caption_encoded['input_ids'])
         cap_mask = (

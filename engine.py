@@ -1,4 +1,5 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
+from concurrent.futures.thread import _worker
 import torch
 
 import math
@@ -21,9 +22,8 @@ def train_one_epoch(model, criterion, data_loader,
             samples = utils.NestedTensor(images, masks).to(device)
             caps = caps.to(device)
             cap_masks = cap_masks.to(device)
-
-            outputs = model(samples, caps[:, :-1], cap_masks[:, :-1])
-            loss = criterion(outputs.permute(0, 2, 1), caps[:, 1:])
+            outputs = model(samples, caps[:, :-1], cap_masks[:, :-1]) #(samples, caps[:, :-1], cap_masks[:, :-1])
+            loss = criterion(outputs.permute(0, 2, 1), caps[:, 1:].type(torch.int64) ) #caps[:, 1:].type(torch.int64) )
             loss_value = loss.item()
             epoch_loss += loss_value
 
@@ -55,8 +55,8 @@ def evaluate(model, criterion, data_loader, device):
             caps = caps.to(device)
             cap_masks = cap_masks.to(device)
 
-            outputs = model(samples, caps[:, :-1], cap_masks[:, :-1])
-            loss = criterion(outputs.permute(0, 2, 1), caps[:, 1:])
+            outputs = model(samples, caps[:, :-1], cap_masks[:, :-1]) 
+            loss = criterion(outputs.permute(0, 2, 1), caps[:, 1:].type(torch.int64) )
 
             validation_loss += loss.item()
 
