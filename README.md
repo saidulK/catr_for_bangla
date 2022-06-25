@@ -7,28 +7,28 @@ PyTorch training code and pretrained models for **CATR** (**CA**ption **TR**ansf
 
 <p align="center">
   <img src=".github/1.png" />
-  কযেকজন মানষ আছে ।
 </p>
+ কযেকজন মানষ আছে ।
+
 
 <p align="center">
   <img src=".github/2.png" />
-  একজন পরষ একটি রিকসা চালিযে যাচছে ।
 </p>
+ একজন পরষ একটি রিকসা চালিযে যাচছে ।
+
 
 <p align="center">
   <img src=".github/5.PNG" />
-একটি মেযে শিশ তাকিযে আছে ।
 </p>
+একটি মেযে শিশ তাকিযে আছে ।
+
 
 <p align="center">
   <img src=".github/4.png" />
-  একজন নারী মোবাইল এ কথা বলছে ।
 </p>
+ একজন নারী মোবাইল এ কথা বলছে ।
 
-<p align="center">
-  <img src=".github/3.PNG" />
-  কযেকজন মানষ আছে ।
-</p>
+
 
 
 # Google colab:
