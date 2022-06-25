@@ -18,13 +18,13 @@ PyTorch training code and pretrained models for **CATR** (**CA**ption **TR**ansf
 
 
 <p align="center">
-  <img src=".github/4.PNG" />
+  <img src=".github/4.png" />
 </p>
 একটি মেযে শিশ তাকিযে আছে ।
 
 
 <p align="center">
-  <img src=".github/5.png" />
+  <img src=".github/5.PNG" />
 </p>
  একজন নারী মোবাইল এ কথা বলছে ।
 
